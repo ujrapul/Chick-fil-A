@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Plugin.NFC" Version="0.1.26" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\" />
+    <None Remove="Images\Chic-Fil-a-Sandwich-2-1.jpeg" />
+    <None Remove="Images\qr-code-bc94057f452f4806af70fd34540f72ad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\qr-code-bc94057f452f4806af70fd34540f72ad.png" />
+    <EmbeddedResource Include="Images\Chic-Fil-a-Sandwich-2-1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\13.2.0.0\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v13.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

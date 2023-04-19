@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Chick_fil_A.ViewModels"
+             x:Class="Chick_fil_A.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <viewModels:ItemDetailViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Spacing="20" Padding="15">
+        <!--<Label Text="Text:" FontSize="Medium" />
+        <Label Text="{Binding Text}" FontSize="Small"/>
+        <Label Text="Description:" FontSize="Medium" />
+        <Label Text="{Binding Description}" FontSize="Small"/>-->
+        <Button Clicked="Button_Clicked_StartListening"
+                IsEnabled="{Binding NfcIsEnabled}"
+                Text="Read Tag"/>
+        <Button Clicked="Button_Clicked_StopListening"
+                    IsEnabled="{Binding NfcIsEnabled}"
+                    Text="Stop Listener" />
+        <Button Clicked="Button_Clicked_StartWriting"
+                    IsEnabled="{Binding NfcIsEnabled}"
+                    Text="Write Tag" />
+        <Label Margin="0,6,0,0"
+                Padding="12,6"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding DeviceIsListening}"
+                Text="Listening for NFC Tag..."
+                TextColor="Red" />
+    </StackLayout>
+    
+</ContentPage>
