@@ -32,8 +32,8 @@
 *.app
 
 $ App files
-.apk
-.ipa
+*.apk
+*.ipa
 
 # globs
 Makefile.in
